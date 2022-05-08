@@ -1,7 +1,7 @@
 import json
 import socket
 import random
-import CoupsLegaux
+import coupsLegaux
 
 
 
@@ -34,7 +34,7 @@ while True:
     
         else:
             etat = message['state']#liste pour recuper du dictionnaire
-            the_move_played = random.choice(CoupsLegaux.possibleMoves(etat))
+            the_move_played = random.choice(coupsLegaux.possibleMoves(etat))
             client.send(json.dumps( {
             "response": "move",
              "move": the_move_played ,
