@@ -28,4 +28,3 @@ while True:
       message = json.loads(client.recv(2048).decode()) #fonction load pour decoder fichier json
       print(message)
       client.send(json.dumps({'response':'pong'}).encode())#dictionnaire qu on transforme en json avec dumps puis qu on transforme en binaire avec encode pour pouvoire l'envoyer au client
-if 
