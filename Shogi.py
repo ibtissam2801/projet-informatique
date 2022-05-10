@@ -8,7 +8,7 @@ address = ('localhost',3000) #port du code du prof
 s.connect(address)
 request = {
       "request": "subscribe",
-      "port": 8881,
+      "port": 8882,
       "name": "shogi",
       "matricules": ["12345", "67890"]
    }
@@ -19,7 +19,7 @@ print("reponse:", reponse)
 s.close()
 
 s=socket.socket() #les roles s'inversent, on devient le serveur jeu
-s.bind(('0.0.0.0',8881))#double parenthese car tuple
+s.bind(('0.0.0.0',8882))#double parenthese car tuple
 s.listen()
 while True:
     client,address=s.accept()
@@ -29,11 +29,32 @@ while True:
 #        client.send(json.dumps({'response':'pong'}).encode())#dictionnaire qu on transforme en json avec dumps puis qu on transforme en binaire avec encode pour pouvoire l'envoyer au client
         if message == {'request': 'ping'}:
             client.send(json.dumps({'response':'pong'}).encode())
+        
+
         else:
-            etat = message['state']#liste pour recuper du dictionnaire
-            the_move_played = random.choice(game.possibleMoves(etat))
-            client.send(json.dumps( {
-            "response": "move",
-             "move": the_move_played ,
-             "message": "let's play"
-            }).encode())
+            etat = message['state'] #liste pour recuper la clé state du dictionnaire
+            possibleMoves = game.possibleMoves(etat)
+            if possibleMoves != []:
+                the_move_played = random.choice(possibleMoves)
+
+                print ('shika: ')
+                print (possibleMoves)
+                print(the_move_played)
+                
+                client.send(json.dumps( {
+                "response": "move",
+                "move": the_move_played ,
+                "message": "let's play"
+                }).encode())
+            else: 
+                the_move_played = None
+                client.send(json.dumps( {
+                "response": "move",
+                "move": the_move_played ,
+                "message": "let's play"
+                }).encode())
+
+
+
+
+       
