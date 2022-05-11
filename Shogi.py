@@ -30,7 +30,6 @@ while True:
         if message == {'request': 'ping'}:
             client.send(json.dumps({'response':'pong'}).encode())
         
-
         else:
             etat = message['state'] #liste pour recuper la clé state du dictionnaire
             possibleMoves = game.possibleMoves(etat)
