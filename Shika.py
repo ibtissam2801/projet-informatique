@@ -8,7 +8,7 @@ address = ('localhost',3000) # port du prof
 s.connect(address)
 request = {
       "request": "subscribe",
-      "port": 8885,     # numero de port choisi par nous 
+      "port": 8889,     # numero de port choisi par nous 
       "name": "shika",
       "matricules": ["195163", "195190"]
    }
@@ -21,7 +21,7 @@ s.close()
 #les roles s'inversent, on devient le serveur jeu
 
 s = socket.socket() 
-s.bind(('0.0.0.0',8885))
+s.bind(('0.0.0.0',8889))
 s.listen()
 while True:
     client,address=s.accept()
