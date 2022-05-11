@@ -12,3 +12,4 @@ Ensuite, en expérimentant plusieurs fois le jeu nous avons attribué un poid à
 
 Toutes nos fonctions sont regroupées dans un fichier que nous avons appelé game.py. Nous avons importé ce dernier dans le code de notre intelligence artificielle.
 Nous avons également importé d'autres bibliothèques tel que le socket car notre IA communique en réseau avec le serveur du jeu. Le contenu des messages se fait sous le format JSON nous devions donc également importer la bibliotheque JSON. Et enfin,nous utilisons la bibliothèque pytest pour effectuer des test unitaires.
+
