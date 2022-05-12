@@ -8,8 +8,8 @@ Nous avons créé une intelligence artificielle pour othello portant le nom de s
     3) Instable --> Ce pion peut être retourné à l'instant même ou l'adversaire va jouer. 
 
 
-Ensuite, en expérimentant plusieurs fois le jeu nous avons attribué un poid à chacune des positons du plateau et nous en avons fait un tableau. Notre fonction Bestmove se charge de parcourir la liste des coups legaux et de les faire correspondre avec leur poid. Ensuite, elle les compare entre eux et retourne la position qui correspond au score maximale.(une fonction possiblemove se charge de determiner les coups legaux).
+Ensuite, en expérimentant plusieurs fois le jeu nous avons attribué un poids à chacune des positons du plateau et nous en avons fait un tableau. Notre fonction Bestmove se charge de parcourir la liste des coups legaux et de les faire correspondre avec leur poids. Ensuite, elle les compare entre eux et retourne la position qui correspond au score maximale.(une fonction possiblemove se charge de determiner les coups legaux).
 
 Toutes nos fonctions sont regroupées dans un fichier que nous avons appelé game.py. Nous avons importé ce dernier dans le code de notre intelligence artificielle.
-Nous avons également importé d'autres bibliothèques tel que le socket car notre IA communique en réseau avec le serveur du jeu. Le contenu des messages se fait sous le format JSON nous devions donc également importer la bibliotheque JSON. Et enfin,nous utilisons la bibliothèque pytest pour effectuer des test unitaires.
+Nous avons également importé d'autres bibliothèques tel que le socket car notre IA communique en réseau avec le serveur du jeu. Le contenu des messages se fait sous le format JSON nous devions donc également importer la bibliotheque JSON. Il y a également un import random qui permettra à l'IA de choisir une valeur aléatoire parmis plusieurs coups possibles possédant le même poids. Et enfin, nous utilisons la bibliothèque pytest pour effectuer des test unitaires.
 
