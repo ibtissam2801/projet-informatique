@@ -5,11 +5,11 @@ from game import possibleMoves
 
 # on est le client IA
 s = socket.socket()
-address = ('localhost', 3000)  # port du prof
+address = ('172.17.10.40', 3000)  # port du prof
 s.connect(address)
 request = {
     "request": "subscribe",
-    "port": 8880,     # numero de port choisi par nous
+    "port": 8889,     # numero de port choisi par nous
     "name": "shika",
     "matricules": ["195163", "195190"]
 }
@@ -23,7 +23,7 @@ s.close()
 # les roles s'inversent, on devient le serveur jeu
 
 s = socket.socket()
-s.bind(('0.0.0.0', 8880))
+s.bind(('0.0.0.0', 8889))
 s.listen()
 
 
