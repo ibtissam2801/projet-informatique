@@ -186,25 +186,6 @@ def Othello(players):
 
     return state, next
 
-def bestmove(possibleMoves):
-    listpoids = [
-    30,   5,  25,  25,   25,  25,    5, 30,
-    5,    1,  10,  10,   10,  10,    1,  5,
-    25,  10,  20,  15,   15,  20,   10, 25, 
-    25,  10,  15,  20,   20,  15,   10, 25,
-    25,  10,  15,  20,   20,  15,   10, 25,
-    25,  10,  20,  15,   15,  20,   10, 25,
-    5,    1,   10,  10,   10,  10,   1,   5,
-    30,   5,  25,  25,   25,  25,   5,  30,
-]
-    for elem in possibleMoves:
-        pmax=0
-        if (pmax<listpoids[elem]):
-            pmax=listpoids[elem]
-            elemMax=elem
-        
-    return elemMax
-
 Game = Othello
 
 if __name__ == '__main__':
